@@ -44,8 +44,13 @@
 	console.log("Before: "+JSON.stringify(arr));
 
 	/*
-	3 == '3' It will be equal as, double equal sign automatically convert the both variable to same type.
-	3 === '3' Not equal, because both are not of same type(So sign cannot compare).
+	3 == '3' | != | It will be equal as, double equal sign automatically convert the both variable to same type.
+	3 === '3' | !== | Not equal, because both are not of same type(So sign cannot compare).
+	> Greater than | < than
+	>= Greater than and equal to | <= Less than and equal to 
+
+	&& Operator
+	|| Operator
 	*/
 
 
@@ -60,5 +65,18 @@
 	}
 
 	console.log(compare(12));
+
+	//Switch Statments
+	function check( num){
+		switch(num){
+              case 0: 
+              	return "zero";
+             
+              case 1:
+              	return "one";
+		}
+	}
+
+	console.log( check(0));
 
 </script>
