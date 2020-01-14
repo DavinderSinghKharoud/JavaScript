@@ -1,0 +1,133 @@
+<script type="text/javascript">
+	
+	//Like JSON file
+	var ourCat = {
+
+		"name": "Billi",
+		"legs": 4,
+		"friends": ["everyone"]
+	}
+
+	console.log(ourCat.friends[0]);
+	console.log(ourCat["friends"]);
+	
+
+	//Updating
+	ourCat.friends = "No One";
+	console.log(ourCat.friends);
+
+    //Deleting
+    delete ourCat.friends;
+    console.log(ourCat);
+
+    //We can use objects, instead of switch statement
+
+    function checkObj( checkProp){
+    	 if( ourCat.hasOwnProperty(checkProp)){
+    	 	return ourCat[checkProp];
+    	 }else{
+    	 	return "Not found";
+    	 }
+    }
+
+    console.log( checkObj("name"));
+
+//Nested Object
+    var myStorage = {
+    	"car": {
+
+    		"inside":{
+    			"gold":"Gloves"
+    		}
+    	}
+    }
+
+console.log( myStorage.car.inside.gold);
+
+var collection = {
+
+	1: {
+		"artist": "sunny",
+		"tracks": [1999]
+	},
+
+	2:{
+		"tracks":[]
+	},
+
+	3:{
+			"album": "Gold"
+	}
+}
+
+function updateRecords( id, prop, value){
+	if( value === ""){
+		delete collection[id][prop];
+	}else if( prop === "tracks"){
+		collection[id][prop] = collection[id][prop] || []; //This is like else statement
+		collection[id][prop].push(value)
+	}else{
+		collection[id][prop] = value;
+	}
+
+	return collection;
+}
+
+console.log( updateRecords(3, "tracks",1999));
+
+var myArr = [];
+var i = 0;
+do{
+
+		myArr.push(i);
+		i++;
+}while(i<5)
+
+console.log(i, myArr);
+
+var randomNumber0and19 = Math.floor( Math.random() * 20);
+
+console.log( randomNumber0and19);
+
+//Converting in to Integer
+var str = "56";
+console.log(parseInt(str));
+
+function checkEqual(a, b){
+
+	return a === b ? "equal":"not equal";
+}
+
+console.log(checkEqual(2,2));
+
+function checkSign(num){
+	return num>0 ? "positive" : num<0 ? "negative":"zero";
+}
+
+console.log( checkSign( 10 ));
+
+//We can't declare like that, if we use let keyword
+// let catName = "Quincy";
+// let catName = "no";
+
+// console.log(catName)
+
+function checkScope(){
+	"use strict";
+	let i = "function scope";
+
+	if( true){
+		let i = " block scopee ";
+		var j = "block scope";
+		console.log(i);
+	}
+	console.log(i);
+	console.log(j);
+}
+
+checkScope();
+
+//We can't reassign the value, but const has all the features of let keyword.
+const CHECK = 5;
+
+</script>
