@@ -1,10 +1,64 @@
 <script type="text/javascript">
 	
+	var globalVar = 10;
 	//Creating the functions
 	function subtract(a, b){
-
-		console.log(a-b);
+     var sub = a-b;
+		console.log(sub);
 	}
 
 	subtract( 5 , 6 );
+
+	function func2(){
+		if(typeof globalVar != "undefined"){
+			console.log(globalVar);
+		}
+
+		//sub is not reachable here
+		if( typeof sub != "undefined"){
+			console.log(sub);
+		}
+
+	}
+
+	func2();
+
+	function timesFive(num){
+		return num*5;
+	}
+
+	console.log(timesFive( 5 ));
+
+	//Implementing Queue
+	function nextLine(arr, num){
+
+		arr.push(num);
+
+		return arr.shift();
+	}
+
+	var arr = [1, 2, 3, 4];
+
+	console.log("Before: "+JSON.stringify(arr));
+	console.log(nextLine(arr, 6));
+	console.log("Before: "+JSON.stringify(arr));
+
+	/*
+	3 == '3' It will be equal as, double equal sign automatically convert the both variable to same type.
+	3 === '3' Not equal, because both are not of same type(So sign cannot compare).
+	*/
+
+
+	function compare(num){
+
+		if( num == '12'){
+			return "double equal sign";
+		}
+		if(num === '12'){
+			return "triple equal sign";
+		}
+	}
+
+	console.log(compare(12));
+
 </script>
