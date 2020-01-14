@@ -130,4 +130,14 @@ checkScope();
 //We can't reassign the value, but const has all the features of let keyword.
 const CHECK = 5;
 
+const arr = [2,3,4];
+
+function arrValue(){
+	// "use strict"
+	arr = [4]
+	arr[0] = 9;
+}
+
+arrValue();
+console.log(arr)
 </script>
