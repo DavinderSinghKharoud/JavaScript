@@ -192,6 +192,75 @@ let arr2;
 
 arr2 = [...arr1];
 arr1[0] = 'changed'
-//But with the reference like arr2 = arr1, the value of arr2 would be also changed.
+//But with the reference like arr2 = arr1, the value of arr2 would be also changed.		
 console.log( arr2 );
+
+//Assigning values from object
+var voxel = {x:3, y:4, z:5};
+var x = voxel.x;
+var y = voxel.y;
+var z = voxel.z;
+
+const{ x: a, y:b, z:c} = voxel;
+
+//Nested
+const forecast = {
+	'today':{min:3},
+	tomorrow :{min:4}
+}
+
+const { tomorrow : {min : minTommorow }} = forecast;
+console.log( minTommorow )
+
+//Assigning from array
+const [z1,x1, , ,y1] = [1,2,3,4,5,6];
+console.log( z1,x1,y1 )
+
+//Creating a copy of array
+const source = [1,2,3,4,5];
+function removeFirstTwo(list){
+
+	const [, , ...arr] = list;
+	return arr;
+}
+
+console.log( removeFirstTwo(source));
+
+//Only accessing certain property of the object
+const stats = {
+	max: 55,
+	min: 20
+}
+const half = (function() {
+	return function half( {min, max}){
+		return (max+min)/2;
+	};
+})();
+
+console.log( stats);
+console.log( half(stats));
+
+//Backtac,we can write multiline strings, and also put variables inside the string
+const result = `Hello ${stats.min}
+						Hi`;
+console.log(result)	
+
+//Accessing attributes of object
+
+var resultSource = {
+	success: ["max", "min", "sum"]
+}	
+
+function makeList(arrCheck){
+
+	var finalResult = [];
+	 for( let i = 0; i<arrCheck.length; i++){
+	 	finalResult.push(`<li class="text-warning">${arr[i]}</li>`);
+	 }
+	 return finalResult;
+
+ 
+}
+
+console.log(makeList(resultSource.success))
 </script>

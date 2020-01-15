@@ -1,0 +1,54 @@
+
+
+<script type="text/javascript">
+
+	import { capitalizeString } from "/string_function";
+
+	const createPerson = (name, age, gender) => ({name, age, gender});
+	console.log(createPerson("sunny", 23, "male"))
+
+	//Function inside object
+	const bicycle = {
+
+		gear:2,
+		setGear(newGear){
+			"use strict"
+			this.gear = newGear;
+		}
+	}
+
+	bicycle.setGear(5)
+	console.log( bicycle.gear)
+
+	//Creating class
+	function makeClass(){
+
+		class Vegetable {
+			constructor(name){
+				this.name = name;
+			}
+
+			get Name(){
+				return this.name;
+			}
+
+			set VegName(updateName){
+				this.name = updateName;
+			}
+
+		}
+
+		return Vegetable;
+	}
+
+	const Vegetable = makeClass();
+	const carrot = new Vegetable('carrot');
+	carrot.VegName = "wow"
+	console.log(carrot.Name);
+
+
+//Importing
+const cap = capitalizeString("hello");
+console.log( cap );
+
+</script>
